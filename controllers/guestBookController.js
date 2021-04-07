@@ -7,6 +7,6 @@ const db = new guestBookDAO();
 db.init();
 
 // root
-exports.index = function(req, res) {
-    res.send("<h1>Index. Not yet implemented.</h1>")
-}
+exports.index = function (req, res) {
+	res.render("index");
+};
