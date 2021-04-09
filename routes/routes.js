@@ -13,5 +13,7 @@ router.get("/", guestBookController.index);
 // User routes
 router.get("/user-register", userController.register);
 
+router.post("/user-register", userController.postRegister);
+
 // Exporting the module
 module.exports = router;
