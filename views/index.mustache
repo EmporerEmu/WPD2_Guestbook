@@ -7,12 +7,28 @@
 
 <body>
     {{>shared/nav}}
-    <div class="container">
+    <div class="container py-3">
+        {{#entries}}
+        <div>
+            {{subject}}
+        </div>
+        <div>
+            {{contents}}
+        </div>
+        <div>
+            Written by <a href="/posts/{{author}}">{{author}}</a> , on {{published}}
+        </div>
+        <a href="/delete{{_id}}" alt="delete this entry"><i class="bi bi-trash"></i></a>
+        <hr>
+        {{/entries}}
+
         {{^user}}
-        <a href="/user-signin" id="login" class="btn btn-success">Sign in</a>
+        <a href="/user-login" id="login" class="btn btn-success">Login</a>
         <a href="/user-register" id="login" class="btn btn-secondary">Register</a>
         <a href="/user-logout" id="login" class="btn btn-danger">Logout</a>
         {{/user}}
+
+
     </div>
 </body>
 

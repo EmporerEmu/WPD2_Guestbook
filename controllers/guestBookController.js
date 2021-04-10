@@ -8,5 +8,14 @@ db.init();
 
 // root
 exports.index = function (req, res) {
-	res.render("index");
+	db.getAllEntries()
+		.then((list) => {
+			res.render("index", {
+				entries: list,
+			});
+			console.log("Promise resolved");
+		})
+		.catch((err) => {
+			console.log("Promise rejected", err);
+		});
 };
